@@ -1,0 +1,23 @@
+/* make a cute tv screen background so it looks like you are swapping channels?? */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#thumbnail {
+  height: 20vh;
+  width: 40vw;
+  display: flex;
+}
+
+#thumbnail img {
+  width: auto;
+  height: 100%;
+  object-fit: contain;
+}
+
+#gallery {
+  width: 100vw;
+  height: 100vh;
+}

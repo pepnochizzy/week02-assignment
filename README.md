@@ -13,3 +13,10 @@ Requesting feedback about a specific part of your submission.
 What useful external sources helped you complete the assignment (e.g Youtube tutorials)?
 What errors or bugs did you encounter while completing your assignment? How did you solve them?
 What went really well and what could have gone better?
+
+# Issues I faced
+
+-- I found creating the first function (createThumbnails()) was the 'simplest', however, when creating the eventhandler (fullscreenImages()) I knew I had to, somehow, pass the current imgData of the clicked thumbnail but also knew this data was in local scope. I was realised I had to 'rubberduck' and reach out to course teachers. When discussing it, it became clear my issue was solely scope related.
+In order to fix the issue I created: thumbnail.addEventListener(`click`, function () {
+createFullscreenImages(imageData[i]);
+}); the reason this works is because on click, an anonymous function passes the current imageData from the local scope into the createFullscreenImages function
