@@ -20,3 +20,4 @@ What went really well and what could have gone better?
 In order to fix the issue I created: thumbnail.addEventListener(`click`, function () {
 createFullscreenImages(imageData[i]);
 }); the reason this works is because on click, an anonymous function passes the current imageData from the local scope into the createFullscreenImages function
+-- I also found creating the next and previous (stretch goal for accessibility) difficult. I think it was that 'linking everything together' that will come with more practice of coding and using JS in complex ways. For the buttons I referenced the example gallery by TechEducators but made sure I went through each line and wrote out what it did in a comment to ensure I actually understood. I also handwrote it and changed certain aspects to fit my actual code.
