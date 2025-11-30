@@ -20,7 +20,7 @@ body {
 }
 
 #thumbnail {
-  height: 12vh;
+  height: 10vh;
   width: 40vw;
   display: flex;
   z-index: 10;
@@ -37,6 +37,7 @@ body {
 }
 
 #gallery {
+  position: relative;
   grid-row: 1/-1;
   grid-column: 1/-1;
 }
@@ -48,5 +49,42 @@ body {
 }
 
 button {
-  width: fit-content;
+  width: 3rem;
+  height: 2rem;
+  z-index: 100;
+  background: rgb(255, 255, 255, 0.4);
+  border-radius: 10px;
+  border: none;
+}
+
+button:hover {
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(252, 169, 4, 0.8), 0 0 35px rgba(198, 124, 20, 0.6);
+}
+
+#next {
+  /*position buttons and style*/
+  position: absolute;
+  right: 0.5vw;
+  bottom: 50vh;
+}
+
+#prev {
+  position: absolute;
+  /*position buttons and style*/
+  left: 0.5vw;
+  bottom: 50vh;
+}
+
+@media (max-width: 600px) {
+  #thumbnail {
+    height: 10vh;
+    width: 40vw;
+    display: flex;
+    z-index: 10;
+    grid-row: 3;
+    grid-column: 2;
+    justify-self: end;
+    align-self: end;
+  }
 }

@@ -6,21 +6,25 @@ const imageData = [
     imageName: `amanitaMusc`,
     imageSrc: `images/fly-agaric-516281_1280.jpg`,
     imageAlt: `Amanita muscaria`,
+    tabIndex: 0,
   },
   {
     imageName: `inkcap`,
     imageSrc: `images/inkpot-3747301_1280.jpg`,
     imageAlt: `Coprinus comatus`,
+    tabIndex: 0,
   },
   {
     imageName: `bolette`,
     imageSrc: `images/beautiful-foot-boletus-2586702_1280.jpg`,
     imageAlt: `Bolette mushroom`,
+    tabIndex: 0,
   },
   {
     imageName: `jelly ear`,
     imageSrc: `images/judas-ear-4727784_1280.jpg`,
     imageAlt: `jelly ear mushroom`,
+    tabIndex: 0,
   },
   //     {
   //         imageName: `value`,
@@ -53,8 +57,14 @@ function createThumbnails() {
     thumbnail.src = imageData[i].imageSrc;
     thumbnail.alt = imageData[i].imageAlt;
     thumbnail.className = imageData[i].imageName;
+    thumbnail.tabIndex = imageData[i].tabIndex;
     thumbnail.addEventListener(`click`, function () {
       createFullscreenImages(imageData[i]);
+    });
+    //this should make the thumbnails selectable as I gave them a tabindex and now a listener that activates with enter and space.
+    thumbnail.addEventListener(`keydown`, function (key) {
+      if (key.key === "Enter" || key.key === " ")
+        createFullscreenImages(imageData[i]);
     });
     thumbnailSection.appendChild(thumbnail);
     console.log(`this is thumbnail alt: ${thumbnail.alt}`); //TESTING
@@ -90,8 +100,14 @@ prev.addEventListener(`click`, function () {
   selectImage(-1); //as above but minus one vs add one
   //handle function prev
 });
+//wanting to add an eventlistener that runs when an arrow key is clicked, originally I thought I should have it linked to next and prev buttons but this wouldn't work as intended as the buttons would have to be focussed. I swapped to document.addEventListener, it now works as intended.
+document.addEventListener(`keydown`, function (key) {
+  if (key.key === "ArrowRight") selectImage(1);
+});
+document.addEventListener(`keydown`, function (key) {
+  if (key.key === "ArrowLeft") selectImage(-1);
+});
 
-//I need a way to remember/update the index so my button knows what image comes next or previously
 //this is step 2
 function selectImage(index) {
   imageIndex += index;

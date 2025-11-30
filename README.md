@@ -21,3 +21,8 @@ In order to fix the issue I created: thumbnail.addEventListener(`click`, functio
 createFullscreenImages(imageData[i]);
 }); the reason this works is because on click, an anonymous function passes the current imageData from the local scope into the createFullscreenImages function
 -- I also found creating the next and previous (stretch goal for accessibility) difficult. I think it was that 'linking everything together' that will come with more practice of coding and using JS in complex ways. For the buttons I referenced the example gallery by TechEducators but made sure I went through each line and wrote out what it did in a comment to ensure I actually understood. I also handwrote it and changed certain aspects to fit my actual code.
+-- wanting to add an eventlistener that runs when an arrow key is clicked, originally I thought I should have it linked to next and prev buttons but this wouldn't work as intended as the buttons would have to be focussed. I swapped to document.addEventListener, it now works as intended.
+
+# Requirements achieved
+
+-- I am hoping it has achieved all requirements.
